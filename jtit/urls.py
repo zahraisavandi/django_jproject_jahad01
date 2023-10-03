@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('product_module.urls',namespace='product-module')),
     path('contactus/',include('contactus_module.urls',namespace='contactus-module')),
-    path('home/',include('home_module.urls',namespace='home-module')),
+    path('home/',include('home_module.urls',namespace='home-module'))
 
 ]
