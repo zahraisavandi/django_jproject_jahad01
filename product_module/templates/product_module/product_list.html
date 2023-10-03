@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<h1>Product List</h1>
+<p><b>Total Products:</b>{{ number_of_product }}</p>
+<p>{{ info }}</p>
+<p><b>Avg Price:</b>{{ info.price__avg }}</p>
+<p><b>Max Price:</b>{{ info.price__max }}</p>
+<p><b>Min Price:</b>{{ info.price__min }}</p>
+<p><b>Max rating:</b>{{ info.ratings__max }}</p>
+<hr>
+<hr>
+<div style="line-height: 30px">
+<ul>
+    {% for product in all_product %}
+{#        <li><a href="#">{{ product.title }}</a>------#}
+{#        <li><a href="{{ product.id }}">{{ product.title }}</a>------#}
+{#        <li><a href="{{ product.slug }}">{{ product.title }}</a>------#}
+{#        <li><a href="{% url 'product-details' slug=product.slug %}">{{ product.title }}</a>------#}
+        <li><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>------
+        <b>description:</b>{{ product.description }}------
+        </li>
+
+    {% endfor %}
+
+</ul>
+</div>
+</body>
+</html>
